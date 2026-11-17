@@ -9,15 +9,15 @@
 /* 사진 + 구매 정보 */
 .pd-top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: start; }
 .pd-gallery__main { padding: 8px; }
-.pd-gallery__main img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--ink); }
+.pd-gallery__main img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--r-sm); }
 .pd-gallery__thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 14px 4px 0; }
 .pd-gallery__thumbs button {
   display: block; width: 100%; padding: 0; cursor: pointer;
-  background: var(--paper-2); border: 2px solid var(--ink);
+  background: var(--paper-2); border: 2px solid var(--line); border-radius: 10px; overflow: hidden;
   opacity: .72;
 }
 .pd-gallery__thumbs button:hover { opacity: 1; }
-.pd-gallery__thumbs button[aria-current="true"] { opacity: 1; box-shadow: 0 0 0 3px var(--red); }
+.pd-gallery__thumbs button[aria-current="true"] { opacity: 1; border-color: var(--red); box-shadow: 0 0 0 2px var(--red); }
 .pd-gallery__thumbs img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
 
 .pd-info__tags { display: flex; gap: 10px; margin: 6px 2px 14px; }
@@ -44,26 +44,28 @@
 .pd-sec { padding: 64px 0 8px; }
 
 /* 볼펜 색 */
+.pd-colorshot { margin: 0 0 24px; padding: 10px; }
+.pd-colorshot img { display: block; width: 100%; border-radius: var(--r-sm); }
 .pd-colors { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 18px 10px; padding: 22px 18px; text-align: center; font-size: 14px; font-weight: 600; }
-.pd-colors span { display: block; height: 64px; margin: 0 auto 8px; max-width: 84px; background: var(--c); border: 2px solid var(--ink); box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .08); }
+.pd-colors span { display: block; height: 64px; margin: 0 auto 8px; max-width: 84px; background: var(--c); border: 2px solid var(--line); border-radius: 14px; box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .08); }
 
 /* 인쇄 */
 .pd-print { padding: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; align-items: center; }
 .pd-print__pen {
   grid-column: 1 / -1; display: block; width: 100%; height: auto; padding: 18px 12px;
   background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='2' height='2' fill='%23f1e7cd'/%3E%3C/svg%3E");
-  border: 2px solid var(--ink);
+  border: 2px solid var(--line); border-radius: var(--r-sm);
 }
 .pd-print__list { display: grid; gap: 10px; }
 .pd-print__list li { display: grid; grid-template-columns: 84px 1fr; gap: 12px; }
 .pd-print__list b { color: var(--ink-2); font-weight: 600; }
 .pd-print__inks { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
-.pd-print__inks i { aspect-ratio: 1.5; background: var(--c); border: 1px solid rgba(59, 42, 38, .35); }
+.pd-print__inks i { aspect-ratio: 1.5; background: var(--c); border: 1px solid rgba(59, 42, 38, .35); border-radius: 4px; }
 
 /* 사진 */
 .pd-story { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 920px; margin: 0 auto; }
 .pd-story figure { margin: 4px; padding: 10px 10px 14px; }
-.pd-story img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 2px solid var(--ink); background: var(--paper-2); }
+.pd-story img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--r-sm); background: var(--paper-2); }
 .pd-story figcaption { padding: 14px 6px 2px; color: var(--ink-2); font-size: 16px; }
 .pd-story figcaption strong { display: block; font: 24px/1.3 var(--f-head); font-weight: normal; color: var(--ink); margin-bottom: 2px; }
 

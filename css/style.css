@@ -18,8 +18,9 @@
   --f-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --f-head: "Jua", "Pretendard Variable", Pretendard, "Malgun Gothic", sans-serif;
   --f-px: "Galmuri14", "Galmuri11", ui-monospace, monospace;
-  --edge: 0 -4px 0 var(--ink), 0 4px 0 var(--ink), -4px 0 0 var(--ink), 4px 0 0 var(--ink);
-  --edge2: 0 -2px 0 var(--ink), 0 2px 0 var(--ink), -2px 0 0 var(--ink), 2px 0 0 var(--ink);
+  --line: #5a3d2e;                       /* 그림 속 외곽선과 같은 갈색 */
+  --drop: rgba(90, 61, 46, .22);
+  --r: 18px; --r-sm: 12px;
 }
 
 * { box-sizing: border-box; }
@@ -44,8 +45,9 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
 /* 픽셀 테두리 상자 */
 .box {
   background: var(--panel);
-  box-shadow: var(--edge), 0 calc(2 * var(--px)) 0 rgba(59, 42, 38, .2);
-  margin: var(--px);
+  border: 3px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: 0 6px 0 var(--drop);
 }
 
 /* 공지 띠 */
@@ -76,7 +78,7 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
   font-weight: 700;
   background: var(--gold);
   padding: 2px 8px;
-  box-shadow: var(--edge2);
+  border: 2px solid var(--line); border-radius: 999px;
   margin-left: 4px;
 }
 .nav { display: flex; gap: 6px; margin-left: auto; }
@@ -86,7 +88,7 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
   display: flex; align-items: center; gap: 6px;
   padding: 4px 10px 4px 6px;
   background: var(--panel);
-  box-shadow: var(--edge2);
+  border: 2px solid var(--line); border-radius: 999px;
 }
 .cart .px-icon { width: 24px; height: 24px; }
 .cart:hover { background: var(--gold); }
@@ -96,8 +98,8 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
 .acts__screen {
   overflow: hidden;
   background: #74bfe6;
-  border-top: 4px solid var(--ink);
-  border-bottom: 4px solid var(--ink);
+  border-top: 3px solid var(--line);
+  border-bottom: 3px solid var(--line);
   line-height: 0;
   cursor: grab;
   touch-action: pan-y;
@@ -125,7 +127,7 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
   padding: 2px 10px;
   font-size: 15px;
   font-weight: 700;
-  box-shadow: var(--edge2);
+  border: 2px solid var(--line); border-radius: 999px;
   white-space: nowrap;
 }
 .acts__text { flex: 1; min-width: 0; line-height: 1.5; }
@@ -138,12 +140,13 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
   background: var(--paper);
   border: 0;
   padding: 8px 10px;
-  box-shadow: var(--edge2), inset 0 -2px 0 var(--paper-2);
+  border: 2px solid var(--line); border-radius: 10px;
+  box-shadow: 0 3px 0 var(--drop);
   cursor: pointer;
 }
 .mini:hover { background: var(--gold); }
-.mini:active { transform: translateY(2px); }
-.mini[aria-pressed="true"] { background: var(--ink); color: var(--paper); box-shadow: var(--edge2); }
+.mini:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--drop); }
+.mini[aria-pressed="true"] { background: var(--line); color: var(--paper); }
 .acts__map {
   display: flex;
   align-items: center;
@@ -159,7 +162,7 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
   font: 700 13px/1 var(--f-body);
   width: 30px; height: 26px;
   padding: 0;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--line); border-radius: 8px;
   background: var(--panel);
   color: var(--ink);
   cursor: pointer;
@@ -184,13 +187,14 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
   padding: 15px 24px 17px;
   color: #fff;
   background: var(--red);
-  box-shadow: var(--edge), inset 0 -4px 0 var(--red-d), 0 8px 0 rgba(59, 42, 38, .2);
-  transition: transform .08s steps(2);
+  border: 3px solid var(--line); border-radius: 16px;
+  box-shadow: inset 0 -4px 0 var(--red-d), 0 5px 0 var(--drop);
+  transition: transform .12s ease;
 }
 .btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(4px); }
-.btn--ghost { color: var(--ink); background: var(--panel); box-shadow: var(--edge), inset 0 -4px 0 var(--paper-2), 0 8px 0 rgba(59, 42, 38, .2); }
-.btn--gold { color: var(--ink); background: var(--gold); box-shadow: var(--edge), inset 0 -4px 0 var(--gold-d), 0 8px 0 rgba(0, 0, 0, .25); }
+.btn--ghost { color: var(--ink); background: var(--panel); box-shadow: inset 0 -4px 0 var(--paper-2), 0 5px 0 var(--drop); }
+.btn--gold { color: var(--ink); background: var(--gold); box-shadow: inset 0 -4px 0 var(--gold-d), 0 5px 0 rgba(0, 0, 0, .3); }
 
 /* 섹션 공통 */
 .section { max-width: 1120px; margin: 0 auto; padding: 56px 20px 8px; }
@@ -198,7 +202,10 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
 .section__head h2 { font: 32px/1.35 var(--f-head); font-weight: normal; margin-top: 4px; }
 
 /* 상품 카드 */
-.goods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.goods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.goods > li.is-wide { grid-column: span 2; }
+.is-wide .good__photo { aspect-ratio: 3 / 2; }
+.is-wide .good__name { font-size: 26px; }
 .goods > li { display: flex; }
 .good {
   position: relative;
@@ -206,29 +213,31 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 12px 12px 14px;
-  transition: transform .08s steps(2);
+  padding: 12px 12px 16px;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-a.good:hover { transform: translateY(-4px); background: #fff; }
+a.good:hover { transform: translateY(-4px); background: #fff; box-shadow: 0 10px 0 var(--drop); }
 .good__photo {
   position: relative;
   display: block;
   aspect-ratio: 1;
   overflow: hidden;
-  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
   background: var(--paper-2);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .good__photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
 a.good:hover .good__photo img { transform: scale(1.05); }
 .good__badge {
-  position: absolute; top: 0; left: 0;
+  position: absolute; top: 10px; left: 10px;
   background: var(--red); color: #fff;
-  padding: 1px 9px;
+  padding: 2px 11px;
   font-size: 13px; font-weight: 700;
-  border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+  border: 2px solid var(--line); border-radius: 999px;
 }
 .good__name { font: 21px/1.3 var(--f-head); font-weight: normal; }
+.good__colors { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
+.good__colors i { width: 20px; height: 20px; border-radius: 50%; background: var(--c); border: 2px solid var(--line); }
 .good__spec { color: #3c7440; font-size: 14px; font-weight: 700; }
 .good__desc { color: var(--ink-2); font-size: 15px; line-height: 1.55; flex: 1; }
 .good__foot {
@@ -243,7 +252,7 @@ a.good:hover .good__photo img { transform: scale(1.05); }
 .good__go { color: var(--red-d); font-size: 14px; font-weight: 700; white-space: nowrap; }
 a.good:hover .good__go { text-decoration: underline; text-underline-offset: 4px; }
 /* 준비 중 자리 */
-.good--empty { background: transparent; box-shadow: none; outline: 4px dashed var(--paper-2); outline-offset: -4px; color: var(--ink-2); }
+.good--empty { background: transparent; box-shadow: none; border: 3px dashed #dcc79a; color: var(--ink-2); }
 .good--empty .good__photo {
   display: grid; place-items: center;
   border-color: var(--paper-2);
@@ -276,9 +285,8 @@ a.good:hover .good__go { text-decoration: underline; text-underline-offset: 4px;
   color: #fff6dc;
   text-align: center;
   padding: 36px 20px 40px;
-  box-shadow: 0 -4px 0 var(--ink), 0 4px 0 var(--ink), -4px 0 0 var(--ink), 4px 0 0 var(--ink),
-    inset 0 0 0 4px #fff6dc, inset 0 0 0 8px var(--ink);
-  margin: 4px;
+  border: 3px solid var(--line); border-radius: 24px;
+  box-shadow: inset 0 0 0 4px var(--ink), inset 0 0 0 6px #e9d9b0, 0 6px 0 var(--drop);
 }
 .message__text { font: 30px/1.5 var(--f-head); }
 .message__caret { display: inline-block; margin-left: 10px; font-size: 14px; color: var(--gold); animation: hop .6s steps(2) infinite; }
@@ -299,6 +307,7 @@ a.good:hover .good__go { text-decoration: underline; text-underline-offset: 4px;
 /* 반응형 */
 @media (max-width: 900px) {
   .goods { grid-template-columns: repeat(2, 1fr); }
+  .goods > li.is-wide { grid-column: 1 / -1; }
   .nav { display: none; }
   .cart { margin-left: auto; }
 }
