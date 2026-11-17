@@ -30,7 +30,7 @@ window.PRODUCTS = [
   /* 카페24 등 다른 주소에 얹을 때: 그림이 있는 곳(JEONDO_BASE)과 상품별 상세 주소(JEONDO_HREF)를 바깥에서 정한다 */
   const BASE = window.JEONDO_BASE || '';
   const HREF = window.JEONDO_HREF || {};
-  const link = (p) => HREF[p.id] || p.href;
+  const link = (p) => (p.id in HREF ? HREF[p.id] : p.href);   // 빈 값이면 '준비 중' 안내
 
   const cards = window.PRODUCTS.map((p) => `
     <li${p.wide ? ' class="is-wide"' : ''}>
