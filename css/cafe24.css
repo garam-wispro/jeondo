@@ -189,7 +189,8 @@ html {scroll-behavior: auto;}
 .jd .pd-cta .btn {flex: 1; text-align: center;}
 }
 /* ---- 카페24 전용 ---- */
-body { background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='2' height='2' fill='%23ecdcb6'/%3E%3C/svg%3E"); }
+/* 카페24 기본 CSS가 뒤에 실리므로 html body 로 우선순위를 높인다 */
+html body { background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='2' height='2' fill='%23ecdcb6'/%3E%3C/svg%3E"); color: var(--ink); font-family: var(--f-body); overflow-x: clip; }
 .jd { background: none; overflow: visible; text-align: left; }
 .jd img { max-width: 100%; }
 .jd button { font-family: inherit; }
