@@ -14,10 +14,11 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let T = 0;
 
+  const BASE = window.JEONDO_BASE || '';   // 카페24처럼 다른 주소에서 불러 쓸 때 그림이 있는 곳
   const atlas = new Image();
-  atlas.src = D.atlas;
+  atlas.src = BASE + D.atlas;
   const tiles = W.tiles.map((t) => ({ x: t.x, w: t.w, src: t.src, img: null }));
-  const tileImg = (i) => { const t = tiles[i]; if (!t.img) { t.img = new Image(); t.img.src = t.src; } return t.img; };
+  const tileImg = (i) => { const t = tiles[i]; if (!t.img) { t.img = new Image(); t.img.src = BASE + t.src; } return t.img; };
   const ready = (im) => im.complete && im.naturalWidth > 0;
 
   /* ---------- 도구 ---------- */

@@ -27,12 +27,16 @@ window.PRODUCTS = [
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const won = (n) => n.toLocaleString('ko-KR') + '원';
   const cols = Number(list.dataset.slots) || 4;
+  /* 카페24 등 다른 주소에 얹을 때: 그림이 있는 곳(JEONDO_BASE)과 상품별 상세 주소(JEONDO_HREF)를 바깥에서 정한다 */
+  const BASE = window.JEONDO_BASE || '';
+  const HREF = window.JEONDO_HREF || {};
+  const link = (p) => HREF[p.id] || p.href;
 
   const cards = window.PRODUCTS.map((p) => `
     <li${p.wide ? ' class="is-wide"' : ''}>
-      <a class="good box" href="${esc(p.href || '#items')}" data-id="${esc(p.id)}"${p.href ? '' : ' data-soon'}>
+      <a class="good box" href="${esc(link(p) || '#items')}" data-id="${esc(p.id)}"${link(p) ? '' : ' data-soon'}>
         <span class="good__photo">
-          <img src="${esc(p.thumb)}" alt="${esc(p.name)} 실제 사진" width="1800" height="760" loading="lazy" decoding="async">
+          <img src="${esc(BASE + p.thumb)}" alt="${esc(p.name)} 실제 사진" width="1800" height="760" loading="lazy" decoding="async">
           ${p.badge ? `<span class="good__badge">${esc(p.badge)}</span>` : ''}
         </span>
         <strong class="good__name">${esc(p.name)}</strong>
@@ -69,7 +73,7 @@ window.PRODUCTS = [
       toast = document.createElement('p');
       toast.className = 'toast box';
       toast.setAttribute('role', 'status');
-      document.body.appendChild(toast);
+      (list.closest('.jd') || document.body).appendChild(toast);
     }
     toast.textContent = '상세 페이지는 준비 중이에요.';
     toast.classList.add('is-on');
