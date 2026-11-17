@@ -12,13 +12,6 @@
     thumbs.querySelectorAll('button').forEach((x) => x.setAttribute('aria-current', String(x === b)));
   });
 
-  /* 구매하기 → 가입 안내 */
-  const dlg = $('join-dialog');
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('[data-buy]')) dlg.showModal();
-    else if (e.target.closest('[data-close]') || e.target === dlg) dlg.close();
-  });
-
   /* 볼펜 색 16가지: 이름 순서는 볼펜 제작 에디터와 같다. 사진은 assets/products/pens/<id>.webp */
   const PEN_COLORS = [
     ['red', '레드'], ['orange', '오렌지'], ['yellow', '옐로우'], ['green', '그린'], ['blue', '블루'], ['navy', '네이비'],
