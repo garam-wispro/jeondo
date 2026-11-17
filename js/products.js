@@ -12,7 +12,7 @@ window.PRODUCTS = [
     wide: true,   // 카드 두 칸 · 가로 사진
     colors: ['#c82525', '#f9760f', '#fde600', '#7fe041', '#3ebaf4', '#264080', '#7e57c7', '#f44fbd', '#2a2d28',
       '#f9cfdc', '#fbf3a0', '#b5f0d2', '#bdeeee', '#a9cdf3', '#dcc4ee', '#f7f6f4'],
-    price: 300,   // 수량에 관계없이 개당 300원 (2026-11-18 대표 지정)
+    price: 350,   // 수량에 관계없이 개당 350원 (2026-11-18 대표 지정, 300원에서 변경)
     priceFlat: true,
     priceNote: '1개부터 · 수량에 관계없이 같은 가격',
     href: 'pen.html',
