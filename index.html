@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>땅끝상점 — 아기자기한 전도용품 가게</title>
+<meta name="description" content="전도지부터 작은 선물까지, 기쁜 소식을 전하는 전도용품 상점.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<p class="notice">★ 교회 · 선교단체 단체 주문 상담 환영 ★</p>
+
+<header class="header">
+  <a class="logo" href="#top" aria-label="땅끝상점 홈">
+    <canvas class="px-icon" data-icon="logo" width="12" height="12"></canvas>
+    <span class="logo__name">땅끝상점</span>
+    <span class="logo__sub">전도용품</span>
+  </a>
+  <nav class="nav" aria-label="주요 메뉴">
+    <a href="#items">전도용품</a>
+    <a href="#quest">주문 방법</a>
+    <a href="#contact">단체 주문</a>
+  </nav>
+  <a class="cart" href="#" aria-label="장바구니, 0개">
+    <canvas class="px-icon" data-icon="cart" width="12" height="12"></canvas>
+    <span>0</span>
+  </a>
+</header>
+
+<main id="top">
+  <h1 class="sr-only">땅끝상점 전도용품</h1>
+
+  <!-- 사도행전 여행 스트립 -->
+  <section class="acts" aria-label="사도행전 주요 사건 애니메이션">
+    <div class="acts__screen">
+      <canvas id="acts-canvas" role="img" aria-label="작은 캐릭터들이 예루살렘에서 로마까지, 사도행전의 주요 사건을 반복해서 보여 주는 애니메이션"></canvas>
+    </div>
+    <div class="acts__hud">
+      <div class="acts__dialog box">
+        <span class="chip" id="acts-chip">행 1장</span>
+        <div class="acts__text">
+          <strong id="acts-title">승천</strong>
+          <span id="acts-desc"></span>
+        </div>
+        <div class="acts__ctrl">
+          <button type="button" class="mini" id="acts-prev" aria-label="이전 장면">◀</button>
+          <button type="button" class="mini" id="acts-pause" aria-pressed="false">멈춤</button>
+          <button type="button" class="mini" id="acts-next" aria-label="다음 장면">▶</button>
+        </div>
+      </div>
+      <div class="acts__map">
+        <span class="acts__place">예루살렘</span>
+        <ol id="acts-map"></ol>
+        <span class="acts__place">로마</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상품: 카드 내용은 js/products.js 에서 채운다 -->
+  <section class="section" id="items">
+    <header class="section__head">
+      <p class="eyebrow">ITEM BOX</p>
+      <h2>전도용품 둘러보기</h2>
+    </header>
+    <ul class="goods" id="goods" data-slots="3"></ul>
+  </section>
+
+  <!-- 주문 방법 -->
+  <section class="section" id="quest">
+    <header class="section__head">
+      <p class="eyebrow">QUEST</p>
+      <h2>주문은 세 걸음이면 끝</h2>
+    </header>
+    <ol class="quests">
+      <li class="quest box"><span class="quest__no">QUEST 1</span><strong>고르기</strong><p>전도 대상과 예산에 맞는 아이템을 골라요.</p></li>
+      <li class="quest box"><span class="quest__no">QUEST 2</span><strong>문구 넣기</strong><p>교회 이름, 말씀, 연락처를 알려 주세요. 시안을 보내 드려요.</p></li>
+      <li class="quest box"><span class="quest__no">QUEST 3</span><strong>받아서 전하기</strong><p>포장까지 마쳐서 보내 드려요. 이제 나가서 전하면 끝!</p></li>
+    </ol>
+  </section>
+
+  <!-- 말씀 -->
+  <section class="section" id="contact">
+    <div class="message">
+      <p class="message__text">땅 끝까지 이르러 내 증인이 되리라.<span class="message__caret" aria-hidden="true">▼</span></p>
+      <p class="message__ref">사도행전 1:8</p>
+      <a class="btn btn--gold" href="#">단체 주문 상담하기</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__grass" aria-hidden="true"></div>
+  <div class="footer__inner">
+    <strong>땅끝상점</strong>
+    <p>상호 · 사업자 정보 · 고객센터 안내가 들어갈 자리입니다.</p>
+    <p class="footer__copy">© 2026 땅끝상점</p>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/products.js"></script>
+<script src="assets/data.js"></script>
+<script src="js/acts.js"></script>
+</body>
+</html>

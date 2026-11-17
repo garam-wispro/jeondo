@@ -1,0 +1,147 @@
+/* 12x12 픽셀 아이콘 */
+(() => {
+  'use strict';
+  const PAL = {
+    k: '#3b2a26', w: '#fffdf5', c: '#f6e3b4', r: '#e0603c', y: '#f2b63d',
+    g: '#6fae5a', b: '#5aa2d8', p: '#f3a6a0', n: '#a8683a', s: '#b9b3a8',
+  };
+  const ART = {
+    logo: [
+      '.kkkkkkkkkk.',
+      'kwwwwwwwwwwk',
+      'kwwrrwwrrwwk',
+      'kwrrrrrrrrwk',
+      'kwrrrrrrrrwk',
+      'kwwrrrrrrwwk',
+      'kwwwrrrrwwwk',
+      'kwwwwrrwwwwk',
+      'kwwwwwwwwwwk',
+      '.kkkwwkkkkk.',
+      '...kwk......',
+      '...kk.......',
+    ],
+    cart: [
+      '............',
+      'kk..........',
+      '.kkkkkkkkkk.',
+      '.kyyyyyyyyk.',
+      '.kyyyyyyyyk.',
+      '..kyyyyyyk..',
+      '..kkkkkkkk..',
+      '..k.....k...',
+      '..kkkkkkkk..',
+      '............',
+      '..kk...kk...',
+      '..kk...kk...',
+    ],
+    tract: [
+      '..kkkkkkkk..',
+      '.kwwwwwwwwk.',
+      '.kwwwrrwwwk.',
+      '.kwwwrrwwwk.',
+      '.kwrrrrrrwk.',
+      '.kwrrrrrrwk.',
+      '.kwwwrrwwwk.',
+      '.kwwwrrwwwk.',
+      '.kwwwrrwwwk.',
+      '.kwwwwwwwwk.',
+      '.kwsswssswk.',
+      '..kkkkkkkk..',
+    ],
+    pen: [
+      '.........kk.',
+      '........kyyk',
+      '.......kyyk.',
+      '......kbbk..',
+      '.....kbbk...',
+      '....kbbk....',
+      '...kbbk.....',
+      '..kbbk......',
+      '.kwwk.......',
+      '.kwk........',
+      'kkk.........',
+      'k...........',
+    ],
+    keyring: [
+      '...kkkk.....',
+      '..k....k....',
+      '..k....k....',
+      '...kkkk.....',
+      '.....k......',
+      '..kk.k.kk...',
+      '.krrkkkrrk..',
+      '.krrrrrrrk..',
+      '.krrrrrrrk..',
+      '..krrrrrk...',
+      '...krrrk....',
+      '....kkk.....',
+    ],
+    card: [
+      '............',
+      '.kkkkkkkkkk.',
+      '.kbbbbbbbbk.',
+      '.kbbybbbbbk.',
+      '.kbbbbbwwbk.',
+      '.kggggggggk.',
+      '.kggggggggk.',
+      '.kwwwwwwwwk.',
+      '.kwsssssswk.',
+      '.kwwwwwwwwk.',
+      '.kkkkkkkkkk.',
+      '............',
+    ],
+    mirror: [
+      '...kkkkkk...',
+      '..kppppppk..',
+      '.kpbbbbbbpk.',
+      '.kpbwbbbbpk.',
+      '.kpbbwbbbpk.',
+      '.kpbbbbbbpk.',
+      '..kppppppk..',
+      '...kkppkk...',
+      '....kppk....',
+      '....kppk....',
+      '....kppk....',
+      '....kkkk....',
+    ],
+    tissue: [
+      '....kwwk....',
+      '...kwwwwk...',
+      '.kkkkwwkkkk.',
+      'kggggkkggggk',
+      'kggggggggggk',
+      'kgwwwwwwwwgk',
+      'kgwsssssswgk',
+      'kgwwwwwwwwgk',
+      'kgwsssswwwgk',
+      'kgwwwwwwwwgk',
+      'kggggggggggk',
+      '.kkkkkkkkkk.',
+    ],
+    gift: [
+      '..kk....kk..',
+      '.kyyk..kyyk.',
+      '..kyykkyyk..',
+      '.kkkkyykkkk.',
+      'krrrryyrrrrk',
+      'kkkkkyykkkkk',
+      '.krrryyrrrk.',
+      '.krrryyrrrk.',
+      '.krrryyrrrk.',
+      '.krrryyrrrk.',
+      '.krrryyrrrk.',
+      '.kkkkkkkkkk.',
+    ],
+  };
+  document.querySelectorAll('canvas[data-icon]').forEach((cv) => {
+    const art = ART[cv.dataset.icon];
+    if (!art) return;
+    const g = cv.getContext('2d');
+    art.forEach((row, y) => {
+      for (let x = 0; x < row.length; x++) {
+        const c = PAL[row[x]];
+        if (c) { g.fillStyle = c; g.fillRect(x, y, 1, 1); }
+      }
+    });
+  });
+})();
