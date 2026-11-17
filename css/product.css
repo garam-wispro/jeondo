@@ -25,15 +25,12 @@
 .pd-info h1 { font: 44px/1.2 var(--f-head); font-weight: normal; }
 .pd-info__lead { color: var(--ink-2); font-size: 17px; margin: 10px 0 20px; }
 
-.pd-price { width: 100%; border-collapse: collapse; }
-.pd-price caption { text-align: left; font: 14px/1.6 var(--f-px); letter-spacing: 2px; color: var(--red-d); padding-bottom: 6px; }
-.pd-price th, .pd-price td { padding: 11px 4px; border-top: 2px dashed var(--paper-2); }
-.pd-price tr:last-child th, .pd-price tr:last-child td { border-bottom: 2px dashed var(--paper-2); }
-.pd-price th { text-align: left; font-weight: 600; }
-.pd-price td { text-align: right; color: var(--ink-2); }
-.pd-price b { font-size: 24px; font-weight: 800; color: var(--ink); margin-right: 2px; }
 
 
+.pd-one { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; padding: 16px 0 18px; border-top: 2px dashed var(--paper-2); border-bottom: 2px dashed var(--paper-2); font-size: 20px; font-weight: 700; }
+.pd-one span { color: var(--ink-2); font-size: 16px; font-weight: 600; }
+.pd-one b { font-size: 46px; font-weight: 800; line-height: 1; color: var(--red-d); }
+.pd-one small { flex-basis: 100%; color: var(--ink-2); font-size: 15px; font-weight: 500; margin-top: 4px; }
 .pd-spec { margin: 20px 0 24px; display: grid; gap: 8px; }
 .pd-spec li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; }
 .pd-spec b { color: var(--ink-2); font-weight: 600; }
@@ -43,24 +40,37 @@
 /* 섹션 */
 .pd-sec { padding: 64px 0 8px; }
 
-/* 볼펜 색 */
-.pd-colorshot { margin: 0 0 24px; padding: 10px; }
-.pd-colorshot img { display: block; width: 100%; border-radius: var(--r-sm); }
-.pd-colors { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 18px 10px; padding: 22px 18px; text-align: center; font-size: 14px; font-weight: 600; }
-.pd-colors span { display: block; height: 64px; margin: 0 auto 8px; max-width: 84px; background: var(--c); border: 2px solid var(--line); border-radius: 14px; box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .08); }
-
-/* 인쇄 */
-.pd-print { padding: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; align-items: center; }
-.pd-print__pen {
-  grid-column: 1 / -1; display: block; width: 100%; height: auto; padding: 18px 12px;
-  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='2' height='2' fill='%23f1e7cd'/%3E%3C/svg%3E");
-  border: 2px solid var(--line); border-radius: var(--r-sm);
+/* 볼펜 색: 실제 볼펜 뒷부분 사진. 조각을 틈 없이 이어 붙여 한 줄로 놓인 볼펜처럼 보이게 한다 */
+.pd-pens {
+  display: grid; grid-template-columns: repeat(16, minmax(0, 1fr));
+  background: #fbeedb; border: 3px solid var(--line); border-radius: var(--r);
+  box-shadow: 0 6px 0 var(--drop); overflow: hidden;
+  text-align: center; font-size: 13px; font-weight: 700; line-height: 1.25;
 }
-.pd-print__list { display: grid; gap: 10px; }
-.pd-print__list li { display: grid; grid-template-columns: 84px 1fr; gap: 12px; }
-.pd-print__list b { color: var(--ink-2); font-weight: 600; }
-.pd-print__inks { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
-.pd-print__inks i { aspect-ratio: 1.5; background: var(--c); border: 1px solid rgba(59, 42, 38, .35); border-radius: 4px; }
+.pd-pens li { display: flex; flex-direction: column; background: var(--panel); }
+.pd-pens span { display: block; overflow: hidden; background: #fbeedb; }
+.pd-pens img { display: block; width: 100%; height: auto; transition: transform .2s ease; }
+.pd-pens li:hover img { transform: translateY(-10px); }
+.pd-pens b { display: grid; place-items: center; flex: 1; min-height: 52px; padding: 8px 2px; font-weight: 700; border-top: 3px solid var(--line); word-break: keep-all; }
+
+/* 안내 */
+.pd-notice { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.pd-notice li { position: relative; padding: 26px 22px 22px; }
+.pd-notice__no {
+  position: absolute; top: -16px; left: 18px;
+  width: 34px; height: 34px; display: grid; place-items: center;
+  font: 19px/1 var(--f-head); color: #fff;
+  background: var(--red); border: 3px solid var(--line); border-radius: 50%;
+}
+.pd-notice strong { display: block; font: 23px/1.3 var(--f-head); font-weight: normal; margin-bottom: 8px; }
+.pd-notice p { color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+/* 에디터 */
+.pd-editor { display: block; padding: 10px; max-width: 980px; margin: 0 auto; transition: transform .15s ease, box-shadow .15s ease; }
+.pd-editor:hover { transform: translateY(-4px); box-shadow: 0 10px 0 var(--drop); }
+.pd-editor img { display: block; width: 100%; border-radius: var(--r-sm); border: 1px solid #ead9b6; }
+.pd-editor__cta { text-align: center; margin-top: 30px; }
+.pd-editor__cta .btn { font-size: 25px; padding: 19px 34px 21px; }
 
 /* 사진 */
 .pd-story { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 920px; margin: 0 auto; }
@@ -72,15 +82,16 @@
 
 @media (max-width: 900px) {
   .pd-top { grid-template-columns: 1fr; gap: 22px; }
-  .pd-print { grid-template-columns: 1fr; }
+  .pd-notice { grid-template-columns: 1fr; gap: 30px; }
 }
 @media (max-width: 640px) {
   .pd { padding: 0 12px; }
   .pd-info h1 { font-size: 34px; }
   .pd-sec { padding-top: 48px; }
-  .pd-colors { grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 16px 8px; gap: 14px 6px; font-size: 12.5px; letter-spacing: -.3px; }
-  .pd-colors span { height: 48px; }
-  .pd-print { padding: 12px; }
+  .pd-pens { grid-template-columns: repeat(8, minmax(0, 1fr)); font-size: 11px; letter-spacing: -.5px; }
+  .pd-pens b { min-height: 40px; padding: 6px 0; }
+  .pd-pens li:nth-child(n+9) span { border-top: 3px solid var(--line); }
+  .pd-editor__cta .btn { font-size: 20px; padding: 16px 20px 18px; }
   .pd-story figcaption strong { font-size: 21px; }
     .pd-cta .btn { flex: 1; text-align: center; }
 }

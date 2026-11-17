@@ -12,9 +12,9 @@ window.PRODUCTS = [
     wide: true,   // 카드 두 칸 · 가로 사진
     colors: ['#c82525', '#f9760f', '#fde600', '#7fe041', '#3ebaf4', '#264080', '#7e57c7', '#f44fbd', '#2a2d28',
       '#f9cfdc', '#fbf3a0', '#b5f0d2', '#bdeeee', '#a9cdf3', '#dcc4ee', '#f7f6f4'],
-    // 스마트스토어 정산 자료(2026-01~06) 기준: 1~50개 440원, 51개 이상 390원, OPP 개별포장 +50원
-    price: 390,
-    priceNote: '51개 이상 · 1~50개는 440원',
+    price: 300,   // 수량에 관계없이 개당 300원 (2026-11-18 대표 지정)
+    priceFlat: true,
+    priceNote: '1개부터 · 수량에 관계없이 같은 가격',
     href: 'pen.html',
     store: 'https://smartstore.naver.com/selectgoods/products/11920761979',
   },
@@ -40,7 +40,7 @@ window.PRODUCTS = [
         ${p.colors ? `<span class="good__colors" aria-label="볼펜 색 ${p.colors.length}가지">${p.colors.map((c) => `<i style="--c:${esc(c)}"></i>`).join('')}</span>` : ''}
         ${p.desc ? `<span class="good__desc">${esc(p.desc)}</span>` : ''}
         <span class="good__foot">
-          <span class="good__price${p.price == null ? ' is-soon' : ''}">${p.price == null ? '가격 준비 중' : `<small>개당</small> ${won(p.price)}<small>~</small>`}</span>
+          <span class="good__price${p.price == null ? ' is-soon' : ''}">${p.price == null ? '가격 준비 중' : `<small>개당</small> ${won(p.price)}${p.priceFlat ? '' : '<small>~</small>'}`}</span>
           <span class="good__go">보러 가기 ▶</span>
         </span>
         ${p.priceNote ? `<span class="good__note">${esc(p.priceNote)}</span>` : ''}
