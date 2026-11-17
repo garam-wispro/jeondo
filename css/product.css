@@ -7,10 +7,10 @@
 .crumb strong { color: var(--ink); }
 
 /* 사진 + 구매 정보 */
-.pd-top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+.pd-top { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 32px; align-items: start; }
 .pd-gallery__main { padding: 8px; }
-.pd-gallery__main img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--r-sm); }
-.pd-gallery__thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 14px 4px 0; }
+.pd-gallery__main img { display: block; width: 100%; background: #ebeceb; border-radius: var(--r-sm); }
+.pd-gallery__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0 0; }
 .pd-gallery__thumbs button {
   display: block; width: 100%; padding: 0; cursor: pointer;
   background: var(--paper-2); border: 2px solid var(--line); border-radius: 10px; overflow: hidden;
@@ -18,7 +18,7 @@
 }
 .pd-gallery__thumbs button:hover { opacity: 1; }
 .pd-gallery__thumbs button[aria-current="true"] { opacity: 1; border-color: var(--red); box-shadow: 0 0 0 2px var(--red); }
-.pd-gallery__thumbs img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.pd-gallery__thumbs img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 
 .pd-info__tags { display: flex; gap: 10px; margin: 6px 2px 14px; }
 .chip--green { background: var(--green-d); }
@@ -43,12 +43,12 @@
 /* 볼펜 색: 실제 볼펜 뒷부분 사진. 조각을 틈 없이 이어 붙여 한 줄로 놓인 볼펜처럼 보이게 한다 */
 .pd-pens {
   display: grid; grid-template-columns: repeat(16, minmax(0, 1fr));
-  background: #fbeedb; border: 3px solid var(--line); border-radius: var(--r);
+  background: #ebeceb; border: 3px solid var(--line); border-radius: var(--r);
   box-shadow: 0 6px 0 var(--drop); overflow: hidden;
   text-align: center; font-size: 13px; font-weight: 700; line-height: 1.25;
 }
 .pd-pens li { display: flex; flex-direction: column; background: var(--panel); }
-.pd-pens span { display: block; overflow: hidden; background: #fbeedb; }
+.pd-pens span { display: block; overflow: hidden; background: #ebeceb; }
 .pd-pens img { display: block; width: 100%; height: auto; transition: transform .2s ease; }
 .pd-pens li:hover img { transform: translateY(-10px); }
 .pd-pens b { display: grid; place-items: center; flex: 1; min-height: 52px; padding: 8px 2px; font-weight: 700; border-top: 3px solid var(--line); word-break: keep-all; }

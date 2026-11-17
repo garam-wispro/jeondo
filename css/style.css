@@ -204,7 +204,7 @@ canvas.px-icon { image-rendering: pixelated; width: 48px; height: 48px; display:
 /* 상품 카드 */
 .goods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .goods > li.is-wide { grid-column: span 2; }
-.is-wide .good__photo { aspect-ratio: 3 / 2; }
+.is-wide .good__photo { aspect-ratio: 1800 / 760; }
 .is-wide .good__name { font-size: 26px; }
 .goods > li { display: flex; }
 .good {

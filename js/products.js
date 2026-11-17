@@ -32,7 +32,7 @@ window.PRODUCTS = [
     <li${p.wide ? ' class="is-wide"' : ''}>
       <a class="good box" href="${esc(p.href || '#items')}" data-id="${esc(p.id)}"${p.href ? '' : ' data-soon'}>
         <span class="good__photo">
-          <img src="${esc(p.thumb)}" alt="${esc(p.name)} 실제 사진" width="1536" height="1024" loading="lazy" decoding="async">
+          <img src="${esc(p.thumb)}" alt="${esc(p.name)} 실제 사진" width="1800" height="760" loading="lazy" decoding="async">
           ${p.badge ? `<span class="good__badge">${esc(p.badge)}</span>` : ''}
         </span>
         <strong class="good__name">${esc(p.name)}</strong>
