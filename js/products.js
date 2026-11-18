@@ -18,6 +18,20 @@ window.PRODUCTS = [
     href: 'pen.html',
     store: 'https://smartstore.naver.com/selectgoods/products/11920761979',
   },
+  {
+    id: 'minipen-01',
+    name: '말씀 미니 볼펜',
+    spec: '14가지 색 · 컬러 인쇄 · 길이 117mm',
+    desc: '통통한 미니 볼펜에 교회 이름이나 말씀을 한 줄 또는 두 줄로 인쇄해요.',
+    thumb: 'assets/products/minipen-square.webp',   // 볼펜 에디터 2가 그린 그림(실물 사진이 생기면 바꾼다)
+    badge: '1개부터 제작',
+    colors: ['#38373c', '#43b5ec', '#9abb49', '#854f44', '#feda66', '#818181', '#e5cecd', '#d7b5d2', '#eef0f5',
+      '#9cbf4a', '#ffde6c', '#dcb9d7', '#e2c9c8', '#814c40'],
+    price: 400,   // 수량에 관계없이 개당 400원 (2026-11-18 대표 지정)
+    priceFlat: true,
+    priceNote: '1개부터 · 수량에 관계없이 같은 가격',
+    href: 'https://prtromance.cafe24.com/product/detail.html?product_no=12',   // 카페24 상품 페이지(따로 만든 상세 화면 없음)
+  },
 ];
 
 (() => {
@@ -36,7 +50,7 @@ window.PRODUCTS = [
     <li${p.wide ? ' class="is-wide"' : ''}>
       <a class="good box" href="${esc(link(p) || '#items')}" data-id="${esc(p.id)}"${link(p) ? '' : ' data-soon'}>
         <span class="good__photo">
-          <img src="${esc(BASE + p.thumb)}" alt="${esc(p.name)} 실제 사진" width="1800" height="760" loading="lazy" decoding="async">
+          <img src="${esc(BASE + p.thumb)}" alt="${esc(p.name)} 실제 사진" width="${p.wide ? 1800 : 1200}" height="${p.wide ? 760 : 1200}" loading="lazy" decoding="async">
           ${p.badge ? `<span class="good__badge">${esc(p.badge)}</span>` : ''}
         </span>
         <strong class="good__name">${esc(p.name)}</strong>

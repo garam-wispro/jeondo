@@ -64,6 +64,14 @@ button.btn { font-family: var(--f-head); }
 .pd-pens li:hover img { transform: translateY(-10px); }
 .pd-pens b { display: grid; place-items: center; flex: 1; min-height: 52px; padding: 8px 2px; font-weight: 700; border-top: 3px solid var(--line); word-break: keep-all; }
 
+/* 색 이름표(실물 사진이 없는 상품): 색 점 + 이름 */
+.mp-colors { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; max-width: 860px; margin: 22px auto 0; }
+.mp-colors li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 8px; background: var(--panel); border: 2px solid var(--line); border-radius: 999px; font-size: 15px; font-weight: 600; }
+.mp-colors i { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--line); background: var(--c); }
+.pd-wide { display: block; padding: 8px; max-width: 1000px; margin: 0 auto; }
+.pd-wide img { display: block; width: 100%; border-radius: var(--r-sm); }
+.pd-caption { text-align: center; color: var(--ink-2); font-size: 14px; margin-top: 12px; }
+
 /* 안내 */
 .pd-notice { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .pd-notice li { position: relative; padding: 26px 22px 22px; }

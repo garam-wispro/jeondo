@@ -164,6 +164,12 @@ html {scroll-behavior: auto;}
 .jd .pd-pens img {display: block; width: 100%; height: auto; transition: transform .2s ease;}
 .jd .pd-pens li:hover img {transform: translateY(-10px);}
 .jd .pd-pens b {display: grid; place-items: center; flex: 1; min-height: 52px; padding: 8px 2px; font-weight: 700; border-top: 3px solid var(--line); word-break: keep-all;}
+.jd .mp-colors {display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; max-width: 860px; margin: 22px auto 0;}
+.jd .mp-colors li {display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 8px; background: var(--panel); border: 2px solid var(--line); border-radius: 999px; font-size: 15px; font-weight: 600;}
+.jd .mp-colors i {width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--line); background: var(--c);}
+.jd .pd-wide {display: block; padding: 8px; max-width: 1000px; margin: 0 auto;}
+.jd .pd-wide img {display: block; width: 100%; border-radius: var(--r-sm);}
+.jd .pd-caption {text-align: center; color: var(--ink-2); font-size: 14px; margin-top: 12px;}
 .jd .pd-notice {display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;}
 .jd .pd-notice li {position: relative; padding: 26px 22px 22px;}
 .jd .pd-notice__no {position: absolute; top: -16px; left: 18px; width: 34px; height: 34px; display: grid; place-items: center; font: 19px/1 var(--f-head); color: #fff; background: var(--red); border: 3px solid var(--line); border-radius: 50%;}
