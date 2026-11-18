@@ -202,6 +202,16 @@ html body { background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http:
 .jd .footer__links a { text-decoration: underline; text-underline-offset: 4px; }
 .jd .footer__inner p { font-size: 14px; line-height: 1.7; }
 .jd .footer__inner a { color: inherit; }
+/* 교회 인증서류 안내(가입 화면 · 가입 완료 화면 · 서류 접수 게시판 · 메인의 접수 완료 알림) */
+.jd .docs { max-width: 600px; margin: 28px auto; padding: 26px 24px 28px; text-align: center; }
+.jd .docs strong { display: block; font: 24px/1.35 var(--f-head); font-weight: normal; margin-bottom: 8px; }
+.jd .docs p { color: var(--ink-2); margin-bottom: 18px; font-size: 16px; }
+.jd .docs p:last-child { margin-bottom: 0; }
+.jd .docs p b { color: var(--ink); }
+.jd .docs-steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; max-width: 760px; margin: 8px auto 10px; padding: 14px 18px; font-weight: 600; font-size: 15px; }
+.jd .docs-steps b { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 6px; color: #fff; background: var(--red); border: 2px solid var(--line); border-radius: 50%; font-size: 13px; }
+.jd .docs-note { text-align: center; color: var(--ink-2); font-size: 14px; margin: 0 auto 22px; padding: 0 12px; }
+.jd .docs-ok { max-width: 720px; margin: 18px auto; padding: 16px 20px; text-align: center; font-weight: 600; background: #eaf6df; }
 /* 휴대폰·태블릿: 카페24 아래쪽 고정 메뉴에 꼬리말이 가리지 않게 */
 @media (max-width: 1024px) {
   .jd .footer__inner { padding-bottom: 96px; }
