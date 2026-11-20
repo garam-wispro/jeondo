@@ -278,6 +278,11 @@ body.jd-detail .xans-product-additional .detail_tab li.tab_open a,
 body.jd-detail .xans-product-additional .detail_tab li a:hover { background: var(--ink) !important; color: var(--paper) !important; }
 body.jd-detail #prdDetail .jd-desc .pd-sec:first-child { padding-top: 40px; }
 
+/* 결제·배송·교환 안내(PAYMENT / DELIVERY / EXCHANGE / SERVICE INFO)는 보이지 않게 (2026-11-20 대표 지시). 같은 내용은 꼬리말의 이용안내에 있다 */
+body.jd-detail #prdInfo,
+body.jd-detail .detail_tab li:has(a[href="#guide"]),
+body.jd-detail #tabProduct li:has(a[href="#prdInfo"]) { display: none !important; }
+
 /* 휴대폰 아래쪽 고정 구매 줄 */
 body.jd-detail #orderFixArea a.btnSubmit { background: var(--red) !important; border-color: var(--line) !important; color: #fff !important; font-family: var(--f-head) !important; }
 body.jd-detail #orderFixArea .actionCart { background: var(--panel) !important; border-color: var(--line) !important; color: var(--ink) !important; font-family: var(--f-head) !important; }

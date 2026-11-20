@@ -111,6 +111,9 @@
     });
   }
 
+  /* 결제·배송·교환 안내 탭은 뺀다(안내 영역 자체는 detail.css 가 숨긴다) */
+  document.querySelectorAll('.detail_tab a[href="#guide"], #tabProduct a[href="#prdInfo"]').forEach((x) => { const li = x.closest('li'); if (li) li.remove(); });
+
   /* 영어로 된 기본 문구를 우리말로 */
   const say = (el, t) => { if (el) el.textContent = t; };
   const title = root.querySelector('#totalPrice .title');
