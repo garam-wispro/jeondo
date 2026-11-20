@@ -71,6 +71,11 @@ button.btn { font-family: var(--f-head); }
 .mp-colors i { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--line); background: var(--c); }
 .pd-wide { display: block; padding: 8px; max-width: 1000px; margin: 0 auto; }
 .pd-wide img { display: block; width: 100%; border-radius: var(--r-sm); }
+.pd-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 1000px; margin: 0 auto; }
+.pd-duo .pd-wide { margin: 0; max-width: none; }
+.pd-steps { max-width: 1000px; margin: 34px auto 0; }
+.pd-spec--center { max-width: 520px; margin: 22px auto 0; }
+@media (max-width: 640px) { .pd-duo { grid-template-columns: 1fr; } }
 .pd-caption { text-align: center; color: var(--ink-2); font-size: 14px; margin-top: 12px; }
 
 /* 안내 */

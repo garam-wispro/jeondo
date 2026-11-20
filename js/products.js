@@ -38,9 +38,9 @@ window.PRODUCTS = [
     name: '미니 줄자',
     spec: '색 5가지 · 지름 5cm · 줄자 1.5m',
     desc: '손바닥에 쏙 들어오는 동그란 미니 줄자예요. 1.5m까지 잴 수 있어요.',
-    art: true,
-    thumb: 'assets/products/tape-square.webp',   // tools/tape_art.html 로 그린 그림(실물 사진이 생기면 바꾼다)
-    colors: ['#e6a497', '#f2b4c6', '#f0edf4', '#bfe3c7', '#b8c8d5'],
+    art: 'render',   // 공급사 제품 사진을 바탕으로 만든 연출 이미지(실물 사진이 생기면 바꾼다)
+    thumb: 'assets/products/tape-square.webp',
+    colors: ['#ee9d8f', '#f4bdc0', '#f0f0ee', '#bfe0c0', '#c3cfdc'],
     price: null,   // 판매가 미정(2026-11-20). 정해지면 숫자를 넣는다
     href: 'https://garam-wispro.github.io/jeondo/tape.html',   // 카페24 메인에서도 열리도록 전체 주소
   },
@@ -62,7 +62,7 @@ window.PRODUCTS = [
     <li${p.wide ? ' class="is-wide"' : ''}>
       <a class="good box" href="${esc(link(p) || '#items')}" data-id="${esc(p.id)}"${link(p) ? '' : ' data-soon'}>
         <span class="good__photo">
-          <img src="${esc(BASE + p.thumb)}" alt="${esc(p.name)}${p.art ? ' 그림' : ' 실제 사진'}" width="${p.wide ? 1800 : 1200}" height="${p.wide ? 760 : 1200}" loading="lazy" decoding="async">
+          <img src="${esc(BASE + p.thumb)}" alt="${esc(p.name)}${p.art === 'render' ? ' 연출 이미지' : p.art ? ' 그림' : ' 실제 사진'}" width="${p.wide ? 1800 : 1200}" height="${p.wide ? 760 : 1200}" loading="lazy" decoding="async">
           ${p.badge ? `<span class="good__badge">${esc(p.badge)}</span>` : ''}
         </span>
         <strong class="good__name">${esc(p.name)}</strong>
