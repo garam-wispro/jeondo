@@ -36,11 +36,11 @@
       tagGreen: '줄자 길이 1.5m',
       lead: '손바닥에 쏙 들어오는 동그란 미니 줄자예요. 1.5m까지 잴 수 있어요.',
       soon: '곧 판매를 시작해요.',
-      spec: [['크기', '지름 5cm · 두께 1cm'], ['줄자 길이', '1.5m'], ['눈금', 'cm'], ['소재', '플라스틱'], ['색', '5가지']],
+      spec: [['크기', '지름 5cm · 두께 1cm'], ['줄자 길이', '1.5m'], ['눈금', 'cm 숫자 · 1mm 간격'], ['소재', '플라스틱'], ['색', '5가지'], ['포장', '1개씩 개별 포장']],
       photos: [
         ['assets/products/tape-lineup.webp', '미니 줄자 5가지 색을 나란히 세워 놓은 모습', 1800, 1200],
         ['assets/products/tape-square.webp', '미니 줄자 5가지 색을 위에서 본 모습', 1200, 1200],
-        ['assets/products/tape-scale.webp', '줄자를 뽑아 cm 눈금이 보이는 모습', 1800, 1200],
+        ['assets/products/tape-scale.webp', '뽑아 놓은 흰 줄자에 cm 숫자와 눈금이 보이는 모습', 1800, 1200],
         ['assets/products/tape-hand.webp', '손바닥 위에 미니 줄자 두 개를 올려놓은 모습', 1800, 1200],
         ['assets/products/tape-button.webp', '가운데 버튼을 눌러 줄자를 감는 모습', 1800, 1200],
       ],
