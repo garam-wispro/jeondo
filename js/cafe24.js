@@ -40,6 +40,7 @@
       photos: [
         ['assets/products/tape-lineup.webp', '미니 줄자 5가지 색을 나란히 세워 놓은 모습', 1800, 1200],
         ['assets/products/tape-square.webp', '미니 줄자 5가지 색을 위에서 본 모습', 1200, 1200],
+        ['assets/products/tape-detail.webp', '미니 줄자 세 개를 세워 놓고 가까이에서 본 모습', 1800, 1200],
         ['assets/products/tape-scale.webp', '뽑아 놓은 흰 줄자에 cm 숫자와 눈금이 보이는 모습', 1800, 1200],
         ['assets/products/tape-hand.webp', '손바닥 위에 미니 줄자 두 개를 올려놓은 모습', 1800, 1200],
         ['assets/products/tape-button.webp', '가운데 버튼을 눌러 줄자를 감는 모습', 1800, 1200],
@@ -135,4 +136,10 @@
   if (title) title.innerHTML = '합계 <span class="qty">(수량)</span>';
   document.querySelectorAll('#orderFixArea a.btnSubmit #actionBuy, #orderFixArea a.btnSubmit span:not(.displaynone)').forEach((el) => { if (/BUY/i.test(el.textContent)) say(el, '구매하기'); });
   document.querySelectorAll('#orderFixArea .actionCart').forEach((el) => say(el, '장바구니'));
+  document.querySelectorAll('#prdReview .board_title h2').forEach((el) => say(el, '상품후기'));
+  document.querySelectorAll('#prdQnA .board_title h2').forEach((el) => say(el, '상품문의'));
+  document.querySelectorAll('#prdReview .board_title a, #prdQnA .board_title a').forEach((el) => {
+    const t = el.textContent.trim().toUpperCase();
+    if (t === 'LIST') say(el, '목록'); else if (t === 'WRITE') say(el, '글쓰기');
+  });
 })();
