@@ -31,6 +31,18 @@
       ],
       editor: ['https://garam-wispro.github.io/pen-editor-2/', '미니 볼펜 직접 디자인하기 ▶'],
     },
+    13: {   // 미니 줄자: 판매가가 정해질 때까지 '가격 준비 중'(soon) 으로 보이고 구매 버튼은 없다
+      tags: ['색 5가지'],
+      tagGreen: '줄자 길이 1.5m',
+      lead: '손바닥에 쏙 들어오는 동그란 미니 줄자예요. 1.5m까지 잴 수 있어요.',
+      soon: '곧 판매를 시작해요.',
+      spec: [['크기', '지름 5cm · 두께 1cm'], ['줄자 길이', '1.5m'], ['소재', '플라스틱'], ['색', '5가지']],
+      photos: [
+        ['assets/products/tape-wide.webp', '미니 줄자 5가지 색을 위에서 본 모습을 그린 그림', 1800, 760],
+        ['assets/products/tape-size.webp', '미니 줄자의 크기와 줄자 길이를 나타낸 그림', 1800, 520],
+        ['assets/products/tape-square.webp', '미니 줄자 5가지 색을 모아 놓은 그림', 1200, 1200],
+      ],
+    },
   };
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -43,18 +55,19 @@
   };
   const name = (root.querySelector('.headingArea h1, .headingArea h2') || {}).textContent || document.title;
   const priceEl = root.querySelector('#span_product_price_text');
-  const price = priceEl ? priceEl.textContent.replace(/[^\d]/g, '') : '';
+  const d = DETAIL[no] || {};
+  const price = !d.soon && priceEl ? priceEl.textContent.replace(/[^\d]/g, '') : '';
   const cate = [...document.querySelectorAll('.xans-product-headcategory a')].filter((x) => x.textContent.trim() && x.textContent.trim() !== '홈').pop();   // 가장 안쪽 분류
   const nativeImg = imgArea.querySelector('img.BigImage, .thumbnail img, img');
-  const d = DETAIL[no] || {};
   const photos = (d.photos || []).map(([src, alt, w, h]) => [BASE + src, alt, w, h]);
   if (!photos.length && nativeImg) photos.push([nativeImg.src, name.trim() + ' 사진', nativeImg.naturalWidth || 1200, nativeImg.naturalHeight || 1200]);
   const lead = d.lead || rowText('상품요약정보');
   const spec = (d.spec || []).slice();
   const ship = rowText('배송비');
-  if (ship) spec.push(['배송비', ship]);
+  if (ship && !d.soon) spec.push(['배송비', ship]);
 
   document.body.classList.add('jd-detail');
+  if (d.soon) document.body.classList.add('jd-soon');   // 수량·합계·구매 줄은 detail.css 가 숨긴다
 
   /* 현재 위치 */
   const crumb = document.createElement('div');
@@ -85,10 +98,10 @@
   const head = document.createElement('div');
   head.className = 'jd';
   head.innerHTML = `<div class="pd-info">
-    <p class="pd-info__tags">${(d.tags || []).map((t) => `<span class="chip">${esc(t)}</span>`).join('')}${price ? `<span class="chip chip--green">개당 ${Number(price).toLocaleString('ko-KR')}원</span>` : ''}</p>
+    <p class="pd-info__tags">${(d.tags || []).map((t) => `<span class="chip">${esc(t)}</span>`).join('')}${price ? `<span class="chip chip--green">개당 ${Number(price).toLocaleString('ko-KR')}원</span>` : d.tagGreen ? `<span class="chip chip--green">${esc(d.tagGreen)}</span>` : ''}</p>
     <h1>${esc(name.trim())}</h1>
     ${lead ? `<p class="pd-info__lead">${esc(lead)}</p>` : ''}
-    ${price ? `<p class="pd-one"><span>개당</span><b>${Number(price).toLocaleString('ko-KR')}</b>원${d.note ? `<small>${esc(d.note)}</small>` : ''}</p>` : ''}
+    ${price ? `<p class="pd-one"><span>개당</span><b>${Number(price).toLocaleString('ko-KR')}</b>원${d.note ? `<small>${esc(d.note)}</small>` : ''}</p>` : d.soon ? `<p class="pd-one"><b class="pd-one__soon">가격 준비 중</b><small>${esc(d.soon)}</small></p>` : ''}
     ${spec.length ? `<ul class="pd-spec">${spec.map(([k, v]) => `<li><b>${esc(k)}</b>${esc(v)}</li>`).join('')}</ul>` : ''}
   </div>`;
   info.insertBefore(head, info.firstChild);
@@ -96,7 +109,7 @@
   /* 구매 버튼: 보이는 버튼이 카페24의 원래 버튼을 대신 눌러 준다 */
   const action = info.querySelector('.xans-product-action:not(#orderFixArea)');
   const nBuy = action && action.querySelector('.action_button a.btnSubmit'), nCart = action && action.querySelector('.action_button .actionCart');
-  if (action && nBuy) {
+  if (action && nBuy && !d.soon) {
     const cta = document.createElement('div');
     cta.className = 'jd';
     cta.innerHTML = `<div class="pd-cta">

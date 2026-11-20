@@ -283,6 +283,10 @@ body.jd-detail #prdInfo,
 body.jd-detail .detail_tab li:has(a[href="#guide"]),
 body.jd-detail #tabProduct li:has(a[href="#prdInfo"]) { display: none !important; }
 
+/* 판매 준비 중인 상품(js/cafe24.js 의 soon): 수량·합계·구매 줄을 숨긴다 */
+body.jd-soon .infoArea > :not(.jd),
+body.jd-soon #orderFixArea { display: none !important; }
+
 /* 휴대폰 아래쪽 고정 구매 줄 */
 body.jd-detail #orderFixArea a.btnSubmit { background: var(--red) !important; border-color: var(--line) !important; color: #fff !important; font-family: var(--f-head) !important; }
 body.jd-detail #orderFixArea .actionCart { background: var(--panel) !important; border-color: var(--line) !important; color: var(--ink) !important; font-family: var(--f-head) !important; }

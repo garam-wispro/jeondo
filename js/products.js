@@ -32,6 +32,16 @@ window.PRODUCTS = [
     priceNote: '1개부터 · 수량에 관계없이 같은 가격',
     href: 'https://prtromance.cafe24.com/product/detail.html?product_no=12',   // 카페24 상품 페이지(따로 만든 상세 화면 없음)
   },
+  {
+    id: 'tape-01',
+    name: '미니 줄자',
+    spec: '색 5가지 · 지름 5cm · 줄자 1.5m',
+    desc: '손바닥에 쏙 들어오는 동그란 미니 줄자예요. 1.5m까지 잴 수 있어요.',
+    thumb: 'assets/products/tape-square.webp',   // tools/tape_art.html 로 그린 그림(실물 사진이 생기면 바꾼다)
+    colors: ['#e6a497', '#f2b4c6', '#f0edf4', '#bfe3c7', '#b8c8d5'],
+    price: null,   // 판매가 미정(2026-11-20). 정해지면 숫자를 넣는다
+    href: 'https://garam-wispro.github.io/jeondo/tape.html',   // 카페24 메인에서도 열리도록 전체 주소
+  },
 ];
 
 (() => {
@@ -55,7 +65,7 @@ window.PRODUCTS = [
         </span>
         <strong class="good__name">${esc(p.name)}</strong>
         ${p.spec ? `<span class="good__spec">${esc(p.spec)}</span>` : ''}
-        ${p.colors ? `<span class="good__colors" aria-label="볼펜 색 ${p.colors.length}가지">${p.colors.map((c) => `<i style="--c:${esc(c)}"></i>`).join('')}</span>` : ''}
+        ${p.colors ? `<span class="good__colors" aria-label="색 ${p.colors.length}가지">${p.colors.map((c) => `<i style="--c:${esc(c)}"></i>`).join('')}</span>` : ''}
         ${p.desc ? `<span class="good__desc">${esc(p.desc)}</span>` : ''}
         <span class="good__foot">
           <span class="good__price${p.price == null ? ' is-soon' : ''}">${p.price == null ? '가격 준비 중' : `<small>개당</small> ${won(p.price)}${p.priceFlat ? '' : '<small>~</small>'}`}</span>
