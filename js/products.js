@@ -40,7 +40,7 @@ window.PRODUCTS = [
     desc: '손바닥에 쏙 들어오는 동그란 미니 줄자예요. 1.5m까지 잴 수 있어요.',
     art: 'render',   // 공급사 제품 사진을 바탕으로 만든 연출 이미지(실물 사진이 생기면 바꾼다)
     thumb: 'assets/products/tape-square.webp',
-    colors: ['#ee9d8f', '#f4bdc0', '#f0f0ee', '#bfe0c0', '#c3cfdc'],
+    colors: ['#f1aea6', '#f7b2cb', '#e1deec', '#d0e7da', '#c8d4e8'],
     price: null,   // 판매가 미정(2026-11-20). 정해지면 숫자를 넣는다
     href: 'https://garam-wispro.github.io/jeondo/tape.html',   // 카페24 메인에서도 열리도록 전체 주소
   },

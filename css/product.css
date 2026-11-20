@@ -11,6 +11,7 @@
 .pd-gallery__main { padding: 8px; }
 .pd-gallery__main img { display: block; width: 100%; background: #ebeceb; border-radius: var(--r-sm); }
 .pd-gallery__thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0 0; }
+.pd-gallery__thumbs--4 { grid-template-columns: repeat(4, 1fr); gap: 10px; }   /* 사진 4장은 한 줄로 */
 .pd-gallery__thumbs button {
   display: block; width: 100%; padding: 0; cursor: pointer;
   background: var(--paper-2); border: 2px solid var(--line); border-radius: 10px; overflow: hidden;

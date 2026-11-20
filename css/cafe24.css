@@ -131,6 +131,7 @@ html {scroll-behavior: auto;}
 .jd .pd-gallery__main {padding: 8px;}
 .jd .pd-gallery__main img {display: block; width: 100%; background: #ebeceb; border-radius: var(--r-sm);}
 .jd .pd-gallery__thumbs {display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0 0;}
+.jd .pd-gallery__thumbs--4 {grid-template-columns: repeat(4, 1fr); gap: 10px;}
 .jd .pd-gallery__thumbs button {display: block; width: 100%; padding: 0; cursor: pointer; background: var(--paper-2); border: 2px solid var(--line); border-radius: 10px; overflow: hidden; opacity: .72;}
 .jd .pd-gallery__thumbs button:hover {opacity: 1;}
 .jd .pd-gallery__thumbs button[aria-current="true"] {opacity: 1; border-color: var(--red); box-shadow: 0 0 0 2px var(--red);}
