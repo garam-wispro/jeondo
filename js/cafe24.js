@@ -44,7 +44,7 @@
   const name = (root.querySelector('.headingArea h1, .headingArea h2') || {}).textContent || document.title;
   const priceEl = root.querySelector('#span_product_price_text');
   const price = priceEl ? priceEl.textContent.replace(/[^\d]/g, '') : '';
-  const cate = document.querySelector('.xans-product-headcategory li:last-child a, .xans-product-headcategory li:last-child strong');
+  const cate = [...document.querySelectorAll('.xans-product-headcategory a')].filter((x) => x.textContent.trim() && x.textContent.trim() !== '홈').pop();   // 가장 안쪽 분류
   const nativeImg = imgArea.querySelector('img.BigImage, .thumbnail img, img');
   const d = DETAIL[no] || {};
   const photos = (d.photos || []).map(([src, alt, w, h]) => [BASE + src, alt, w, h]);
@@ -102,7 +102,7 @@
     cta.innerHTML = `<div class="pd-cta">
       <button type="button" class="btn" data-act="buy">구매하기</button>
       ${nCart ? '<button type="button" class="btn btn--ghost" data-act="cart">장바구니</button>' : ''}
-      ${d.editor ? `<a class="btn btn--ghost pd-cta__editor" href="${esc(d.editor[0])}" target="_blank" rel="noopener">${esc(d.editor[1])}</a>` : ''}
+      ${d.editor ? `<span class="pd-cta__br"></span><a class="btn btn--ghost pd-cta__editor" href="${esc(d.editor[0])}" target="_blank" rel="noopener">${esc(d.editor[1])}</a>` : ''}
     </div>`;
     action.parentNode.insertBefore(cta, action);
     cta.addEventListener('click', (e) => {
