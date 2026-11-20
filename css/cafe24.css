@@ -143,6 +143,7 @@ html {scroll-behavior: auto;}
 .jd .pd-one span {color: var(--ink-2); font-size: 16px; font-weight: 600;}
 .jd .pd-one b {font-size: 46px; font-weight: 800; line-height: 1; color: var(--red-d);}
 .jd .pd-one small {flex-basis: 100%; color: var(--ink-2); font-size: 15px; font-weight: 500; margin-top: 4px;}
+.jd .pd-one b.pd-one__soon {font-size: 30px; color: var(--ink-2);}
 .jd .pd-spec {margin: 20px 0 24px; display: grid; gap: 8px;}
 .jd .pd-spec li {display: grid; grid-template-columns: 76px 1fr; gap: 12px;}
 .jd .pd-spec b {color: var(--ink-2); font-weight: 600;}
