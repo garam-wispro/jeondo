@@ -23,6 +23,7 @@ window.PRODUCTS = [
     name: '말씀 미니 볼펜',
     spec: '14가지 색 · 컬러 인쇄 · 길이 117mm',
     desc: '통통한 미니 볼펜에 교회 이름이나 말씀을 한 줄 또는 두 줄로 인쇄해요.',
+    art: true,   // 사진이 아니라 그림
     thumb: 'assets/products/minipen-square.webp',   // 볼펜 에디터 2가 그린 그림(실물 사진이 생기면 바꾼다)
     badge: '1개부터 제작',
     colors: ['#38373c', '#43b5ec', '#9abb49', '#854f44', '#feda66', '#818181', '#e5cecd', '#d7b5d2', '#eef0f5',
@@ -37,6 +38,7 @@ window.PRODUCTS = [
     name: '미니 줄자',
     spec: '색 5가지 · 지름 5cm · 줄자 1.5m',
     desc: '손바닥에 쏙 들어오는 동그란 미니 줄자예요. 1.5m까지 잴 수 있어요.',
+    art: true,
     thumb: 'assets/products/tape-square.webp',   // tools/tape_art.html 로 그린 그림(실물 사진이 생기면 바꾼다)
     colors: ['#e6a497', '#f2b4c6', '#f0edf4', '#bfe3c7', '#b8c8d5'],
     price: null,   // 판매가 미정(2026-11-20). 정해지면 숫자를 넣는다
@@ -60,7 +62,7 @@ window.PRODUCTS = [
     <li${p.wide ? ' class="is-wide"' : ''}>
       <a class="good box" href="${esc(link(p) || '#items')}" data-id="${esc(p.id)}"${link(p) ? '' : ' data-soon'}>
         <span class="good__photo">
-          <img src="${esc(BASE + p.thumb)}" alt="${esc(p.name)} 실제 사진" width="${p.wide ? 1800 : 1200}" height="${p.wide ? 760 : 1200}" loading="lazy" decoding="async">
+          <img src="${esc(BASE + p.thumb)}" alt="${esc(p.name)}${p.art ? ' 그림' : ' 실제 사진'}" width="${p.wide ? 1800 : 1200}" height="${p.wide ? 760 : 1200}" loading="lazy" decoding="async">
           ${p.badge ? `<span class="good__badge">${esc(p.badge)}</span>` : ''}
         </span>
         <strong class="good__name">${esc(p.name)}</strong>
