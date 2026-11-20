@@ -73,6 +73,7 @@ button.btn { font-family: var(--f-head); }
 .pd-wide img { display: block; width: 100%; border-radius: var(--r-sm); }
 .pd-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 1000px; margin: 0 auto; }
 .pd-duo .pd-wide { margin: 0; max-width: none; }
+.pd-duo--gap { margin-top: 26px; }
 .pd-steps { max-width: 1000px; margin: 34px auto 0; }
 .pd-spec--center { max-width: 520px; margin: 22px auto 0; }
 @media (max-width: 640px) { .pd-duo { grid-template-columns: 1fr; } }
