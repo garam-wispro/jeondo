@@ -177,6 +177,7 @@ html {scroll-behavior: auto;}
 @media (max-width: 640px) {
 .jd .pd-duo {grid-template-columns: 1fr;}
 }
+.jd .pd-gallery__note {margin-top: 10px; text-align: center; color: var(--ink-2); font-size: 13px;}
 .jd .pd-caption {text-align: center; color: var(--ink-2); font-size: 14px; margin-top: 12px;}
 .jd .pd-notice {display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;}
 .jd .pd-notice li {position: relative; padding: 26px 22px 22px;}

@@ -76,6 +76,7 @@ button.btn { font-family: var(--f-head); }
 .pd-steps { max-width: 1000px; margin: 34px auto 0; }
 .pd-spec--center { max-width: 520px; margin: 22px auto 0; }
 @media (max-width: 640px) { .pd-duo { grid-template-columns: 1fr; } }
+.pd-gallery__note { margin-top: 10px; text-align: center; color: var(--ink-2); font-size: 13px; }
 .pd-caption { text-align: center; color: var(--ink-2); font-size: 14px; margin-top: 12px; }
 
 /* 안내 */
